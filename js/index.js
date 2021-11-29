@@ -7,7 +7,6 @@ const melodyBtn = document.querySelector('.play__melody-img');
 /****************************PLAY ACTIVE KEY************************************/
 window.addEventListener('keydown', function (key) {
 	playKey(key.keyCode);
-	console.log(key.keyCode);
 });
 keys.forEach(key => key.addEventListener('click', () => {
 	const currentKeyNum = key.classList[1].slice(1);
@@ -17,11 +16,11 @@ keys.forEach(key => key.addEventListener('click', () => {
 function playKey(key) {
 	animateActiveKey(key);
 	playAudio(key);
+	animateNotes(key);
 }
 
 function animateActiveKey(num) {
 	const activeKey = document.querySelector(`.k${num}`);
-
 	if (!activeKey) return;
 
 	activeKey.classList.add('active');
@@ -40,6 +39,20 @@ function playAudio(audioNum) {
 	activeAudio.currentTime = 0;
 	activeAudio.play();
 }
+/****************************ANIMATE NOTES************************************/
+function animateNotes(key) {
+	const activeKey = document.querySelector(`.k${key}`);
+	const note = document.createElement("span");
+	const size = Math.random() * 30 + 20;
+
+	activeKey.prepend(note);
+	note.classList.add('notes');
+	note.style.height = size + 'px';
+	note.style.width = size + 'px';
+
+	setTimeout(() => note.remove(), 2000)
+};
+
 /****************************CHANGE ACTIVE INSTRUMENT************************************/
 instruments.forEach(instrument => instrument.addEventListener('click', setInstrumentActive))
 function setInstrumentActive() {

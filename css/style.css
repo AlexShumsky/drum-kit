@@ -115,6 +115,7 @@ h2 {
   flex-wrap: wrap;
 }
 .key {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -149,6 +150,38 @@ h2 {
 }
 .sound__description {
   color: gold;
+}
+/***************************NOTES***********************************/
+.notes {
+  position: absolute;
+  top: 0;
+  left: 20%;
+  display: block;
+  background: url("../assets/image/png/notes.png") center / cover no-repeat;
+
+  animation: animate 1s linear infinite;
+}
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    transform: translate(-100%, -200%);
+    opacity: 0.7;
+    filter: hue-rotate(240deg);
+  }
+  75% {
+    transform: translate(-50%, -400%);
+    opacity: 0.3;
+    filter: hue-rotate(480deg);
+  }
+  100% {
+    transform: translate(-50%, -600%);
+    opacity: 0;
+    filter: hue-rotate(720deg);
+  }
 }
 /***************************MEDIA QUERIES****************************/
 @media (max-width: 1400px) {
