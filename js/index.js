@@ -3,7 +3,14 @@ const keys = document.querySelectorAll('.key');
 const instruments = document.querySelectorAll('.instrument');
 const audios = document.querySelectorAll('.audio');
 const melodyBtn = document.querySelector('.play__melody-img');
+const colorTheme = document.querySelectorAll('.theme');
 
+/****************************THEME SWITCHER*************************************/
+colorTheme.forEach(el => el.addEventListener('click', function (e) {
+	const documentBody = document.querySelector('body');
+	documentBody.classList.remove('theme-l');
+	if (this.classList.contains('theme-l')) documentBody.classList.add('theme-l');
+}))
 /****************************PLAY ACTIVE KEY************************************/
 window.addEventListener('keydown', function (key) {
 	playKey(key.keyCode);
@@ -14,6 +21,7 @@ keys.forEach(key => key.addEventListener('click', () => {
 }));
 
 function playKey(key) {
+	if (key == '.') return;
 	animateActiveKey(key);
 	playAudio(key);
 	animateNotes(key);
@@ -44,7 +52,6 @@ function animateNotes(key) {
 	const activeKey = document.querySelector(`.k${key}`);
 	const note = document.createElement("span");
 	const size = Math.random() * 30 + 20;
-
 	activeKey.prepend(note);
 	note.classList.add('notes');
 	note.style.height = size + 'px';
@@ -81,17 +88,16 @@ function btnActive() {
 	melodyBtn.classList.add('play__melody-img-active');
 }
 function playMelody() {
-	const melody = [65, 83, 68, ' ', 74, 76, ' ', 65, 83, 68, ' ', 74, 76, ' ', 65, 83, 68, ' ', 70, 71, ' ', 70, 71, ' ', 72, ' ', 72, ' ',
-		65, 83, 68, 83, 68, 70, ' ', 65, 83, 68, 83, 68, 70, ' ', 74, 75, 72, ' ', 74, 75, 72, ' ', 71, 76, ' ', 76, ' ', 76];
+	const melody = [65, 83, 68, '.', 74, 76, '.', 65, 83, 68, '.', 74, 76, '.', 65, 83, 68, '.', 70, 71, '.', 70, 71, '.', 72, '.', 72, '.',
+		65, 83, 68, 83, 68, 70, '.', 65, 83, 68, 83, 68, 70, '.', 74, 75, 72, '.', 74, 75, 72, '.', 71, 76, '.', 76, '.', 76];
 	melody.forEach((note, i) => {
 		setTimeout(() => {
 			playKey(note);
-		}, (note == ' ') ? i * 500 : i * 200);
+		}, (note == '.') ? i * 500 : i * 200);
 	});
 	btnInActive();
 
 }
-
 function btnInActive() {
 	melodyBtn.classList.remove('play__melody-img-active');
 }
