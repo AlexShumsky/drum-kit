@@ -97,10 +97,10 @@ h1 {
   background: none;
 }
 .theme-l .wrapper {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.2);
 }
 .theme-l .wrapper::after {
-  filter: opacity(0.4);
+  filter: opacity(0.5);
 }
 .theme-l .play__melody-img {
   border: 3px solid rgb(23, 1, 85);
