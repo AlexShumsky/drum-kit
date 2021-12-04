@@ -1,0 +1,388 @@
+/***************************NULL-STYLE****************************/
+@import url("nullstyle.css");
+/***************************MAIN****************************/
+.wrapper {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+
+  min-width: 300px;
+  transition: all 0.3s ease 0s;
+}
+.wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  opacity: 1;
+  opacity: 1;
+  background: url("../assets/image/fon.jpg") center / cover no-repeat;
+  z-index: -1;
+  transition: all 0.3s ease 0s;
+}
+.container {
+  padding: 0px 20px;
+  margin: 0 auto;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
+h1 {
+  font-size: 60px;
+  color: rgb(9, 244, 205);
+  letter-spacing: 2px;
+  text-align: center;
+  width: 100%;
+  margin: 0px 0px 20px 0px;
+}
+/***************************COLOR THEME********************************/
+.theme__color {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  display: flex;
+  width: 50px;
+  height: 20px;
+  border-radius: 15%;
+  overflow: hidden;
+}
+
+.theme {
+  flex: 0 1 50%;
+  display: block;
+  border: 1px solid rgba(139, 129, 129, 0.671);
+}
+.theme-l .theme {
+  flex: 0 1 50%;
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0.301);
+}
+.theme-l {
+  transition: all 0.2s ease 0s;
+}
+.theme-l h1 {
+  color: rgb(23, 1, 85);
+  position: relative;
+}
+.theme-l h1::after {
+  content: " ";
+  position: absolute;
+  display: block;
+  top: -10%;
+  left: 25%;
+  height: 120%;
+  width: 50%;
+  background: rgba(0, 0, 0, 0.486);
+  opacity: 0.2;
+}
+
+.theme-l .theme-l {
+  background: url("../assets/image/png/sun.png") center / cover no-repeat;
+}
+.theme-d {
+  background: url("../assets/image/png/moon.png") center / cover no-repeat;
+  transition: all 0.3s ease 0s;
+}
+.theme-l .theme-d {
+  background: none;
+}
+.theme-l .wrapper {
+  background: rgba(255, 255, 255, 0.2);
+}
+.theme-l .wrapper::after {
+  filter: opacity(0.5);
+}
+.theme-l .play__melody-img {
+  border: 3px solid rgb(23, 1, 85);
+}
+.theme-l .play__melody-img-active {
+  border: 3px solid rgb(128, 0, 89);
+}
+.theme-l h2 {
+  color: rgb(23, 1, 85);
+  font-size: 20px;
+  position: relative;
+  display: block;
+}
+
+.theme-l h2::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background: rgba(0, 0, 0, 0.486);
+  opacity: 0.2;
+}
+.theme-l .instrumet__type {
+  position: relative;
+}
+.theme-l .instrumet__type::before {
+  content: " ";
+  position: absolute;
+  display: block;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background: rgba(0, 0, 0, 0.486);
+  opacity: 0.4;
+}
+.theme-l .btn {
+  border: 3px solid rgb(23, 1, 85);
+}
+.theme-l .active-instrument {
+  border: 3px solid rgb(128, 0, 89);
+}
+.theme-l .key {
+  border: 3px solid rgb(128, 0, 89);
+  color: white;
+
+  box-shadow: inset 0 0 0.9em 0 hsl(300, 94%, 20%), 0 0 1em 0 hsl(263, 97%, 14%);
+  text-shadow: 0 0 0.125rem hsl(0 0% 0% / 1), 0 0 0.4rem hsl(263, 97%, 14%);
+}
+.theme-l .active {
+  box-shadow: inset 0 0 1.5em 0 hsl(355, 90%, 38%), 0 0 2em 0 hsl(4, 92%, 52%);
+}
+
+.theme-l .key__letter {
+  color: rgb(23, 1, 85);
+}
+.theme-l .sound__description {
+  color: rgb(143, 2, 2);
+  font-weight: 700;
+}
+/***************************PLAY MELODY BTN****************************/
+.play__melody {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: flex;
+  align-items: center;
+  max-width: 200px;
+}
+.play__melody-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  width: 70px;
+  border-radius: 10%;
+  margin: 0px 20px;
+
+  border: 3px solid rgb(9, 244, 205);
+  transform: scale(1);
+  transition: all 0.2s ease 0s;
+
+  cursor: pointer;
+}
+.play__melody-img img {
+  max-width: 90%;
+  max-height: 90%;
+}
+.play__melody-img-active {
+  border: 3px solid rgb(241, 10, 172);
+}
+h2 {
+  color: rgb(9, 244, 205);
+  font-size: 20px;
+}
+/***************************INSTRUMENT TYPE****************************/
+
+.instrumet__type {
+  display: flex;
+  justify-content: center;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  width: 70px;
+  border-radius: 10%;
+  margin: 0px 20px;
+
+  border: 3px solid rgb(19, 230, 245);
+  transform: scale(1);
+  transition: all 0.2s ease 0s;
+
+  cursor: pointer;
+}
+.btn img {
+  max-width: 90%;
+  max-height: 90%;
+}
+.active-instrument {
+  border: 3px solid rgb(241, 10, 172);
+  transform: scale(1.1);
+  transition: all 0.2s ease 0s;
+}
+/***************************INSTRUMENT KEYS****************************/
+.instrumental__keys {
+  display: flex;
+
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.key {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid rgb(0, 216, 0);
+  border-radius: 10%;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  margin: 10px;
+  height: 150px;
+  width: 120px;
+
+  box-shadow: inset 0 0 0.9em 0 hsl(300, 96%, 53%), 0 0 1em 0 hsl(101, 93%, 48%);
+  text-shadow: 0 0 0.125rem hsl(0 0% 100% / 0.1), 0 0 0.4rem hsl(189, 89%, 65%);
+
+  transform: scale(1);
+  transition: all 0.1s ease 0s;
+  cursor: pointer;
+}
+.active {
+  transform: scale(1.2);
+  font-size: 24px;
+  box-shadow: inset 0 0 1.5em 0 hsl(300, 90%, 63%), 0 0 2em 0 hsl(101, 93%, 48%);
+  transition: all 0.1s ease 0s;
+}
+
+.key__letter {
+  margin: 0px 0px 10px 0px;
+  color: rgb(9, 243, 223);
+  font-size: 20px;
+}
+.sound__description {
+  color: gold;
+}
+/***************************NOTES***********************************/
+.notes {
+  position: absolute;
+  top: 0;
+  left: 20%;
+  display: block;
+  background: url("../assets/image/png/notes.png") center / cover no-repeat;
+  transform: translate(-50%, -50%);
+  animation: animate 1s linear infinite;
+}
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    transform: translate(-100%, -200%);
+    opacity: 0.7;
+    filter: hue-rotate(240deg);
+  }
+  75% {
+    transform: translate(-50%, -400%);
+    opacity: 0.3;
+    filter: hue-rotate(480deg);
+  }
+  100% {
+    transform: translate(-50%, -600%);
+    opacity: 0;
+    filter: hue-rotate(720deg);
+  }
+}
+/***************************MEDIA QUERIES****************************/
+@media (max-width: 1400px) {
+  h1 {
+    font-size: 45px;
+  }
+  .play__melody-img {
+    height: 50px;
+    width: 50px;
+  }
+  .btn {
+    height: 50px;
+    width: 50px;
+    margin: 0px 15px;
+  }
+
+  .key {
+    font-size: 16px;
+    height: 120px;
+    width: 90px;
+  }
+
+  .active {
+    font-size: 18px;
+  }
+}
+@media (max-width: 768px) {
+  .play__melody {
+    flex-direction: row;
+  }
+  .play__melody-img {
+    height: 40px;
+    width: 40px;
+    margin: 0px 10px;
+  }
+  h2 {
+    font-size: 15px;
+    margin: 0px 0px 5px 0px;
+  }
+  .theme-l h2 {
+    display: none;
+  }
+  .theme-l h1::after {
+    width: 70%;
+    left: 15%;
+  }
+  .btn {
+    height: 40px;
+    width: 40px;
+    margin: 0px 10px;
+  }
+
+  .key {
+    font-size: 12px;
+    height: 70px;
+    width: 60px;
+  }
+  .active {
+    font-size: 14px;
+  }
+}
+@media (max-width: 440px) {
+  .play__melody {
+    flex-direction: row;
+    max-width: 100px;
+  }
+  .play__melody-img {
+    height: 30px;
+    width: 30px;
+  }
+
+  h2 {
+    display: none;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  .theme__color {
+    width: 40px;
+    height: 16px;
+  }
+}

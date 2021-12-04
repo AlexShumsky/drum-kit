@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="shortcut icon" href="#">
+	<title>Drum-kit</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="container">
+			<main class="main">
+				<h1>Virtual Piano</h1>
+				<div class="theme__color">
+					<div class="theme theme-d theme-active"></div>
+					<div class="theme theme-l"></div>
+				</div>
+				<div class="play__melody">
+					<h2>Play melody</h2>
+					<div class="play__melody-img">
+						<img src="assets/image/png/casette.png" alt="play preloaded melody btn">
+					</div>
+				</div>
+				<section class="instrumet__type">
+					<div class="piano instrument active-instrument btn">
+						<img src="assets/image/png/piano.png" alt="piano ico">
+					</div>
+					<div class="guitar instrument btn">
+						<img src="assets/image/png/guitar.png" alt="guitar ico">
+					</div>
+					<div class="drum instrument  btn">
+						<img src="assets/image/png/drum.png" alt="drum ico">
+					</div>
+				</section>
+				<section class="instrumental__keys">
+					<div class="key k65">
+						<div class="key__letter">A</div>
+						<div class="sound__description">F♯3</div>
+					</div>
+					<div class="key k83">
+						<div class="key__letter">S</div>
+						<div class="sound__description">G♯3</div>
+					</div>
+					<div class="key k68">
+						<div class="key__letter">D</div>
+						<div class="sound__description">A♯4</div>
+					</div>
+					<div class="key k70">
+						<div class="key__letter">F</div>
+						<div class="sound__description">B♯4</div>
+					</div>
+					<div class="key k71">
+						<div class="key__letter">G</div>
+						<div class="sound__description">C♯4</div>
+					</div>
+					<div class="key k72">
+						<div class="key__letter">H</div>
+						<div class="sound__description">D♯4</div>
+					</div>
+					<div class="key k74">
+						<div class="key__letter">J</div>
+						<div class="sound__description">E♯4</div>
+					</div>
+					<div class="key k75">
+						<div class="key__letter">K</div>
+						<div class="sound__description">F♯4</div>
+					</div>
+					<div class="key k76">
+						<div class="key__letter">L</div>
+						<div class="sound__description">G♯4</div>
+					</div>
+				</section>
+			</main>
+		</div>
+	</div>
+	<audio id="k65" class="audio" src="assets/audio/piano/track_1.mp3"></audio>
+	<audio id="k83" class="audio" src="assets/audio/piano/track_2.mp3"></audio>
+	<audio id="k68" class="audio" src="assets/audio/piano/track_3.mp3"></audio>
+	<audio id="k70" class="audio" src="assets/audio/piano/track_4.mp3"></audio>
+	<audio id="k71" class="audio" src="assets/audio/piano/track_5.mp3"></audio>
+	<audio id="k72" class="audio" src="assets/audio/piano/track_6.mp3"></audio>
+	<audio id="k74" class="audio" src="assets/audio/piano/track_7.mp3"></audio>
+	<audio id="k75" class="audio" src="assets/audio/piano/track_8.mp3"></audio>
+	<audio id="k76" class="audio" src="assets/audio/piano/track_9.mp3"></audio>
+	<script src="js/index.js"></script>
+</body>
+
+</html>
